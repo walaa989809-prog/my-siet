@@ -1,14 +1,112 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي</title>
+  <title>مفاجآت تالا</title>
+
+  <!-- خط عربي جميل -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #e6d9ff, #f3ecff);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: #6a4fbf;
+      font-size: 40px;
+    }
+
+    .card {
+      width: 80%;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      background: #d9c8ff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message-box {
+      width: 85%;
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      color: #5a3fa0;
+      line-height: 1.8;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #bca7ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a88fff;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>هلا والله 🌷</h1>
-  <p>هذا أول موقع أسويه</p>
+<h1>مفاجآت تالا 💜</h1>
+
+<!-- الخانة الأولى -->
+<div id="firstCard" class="card" onclick="showMessage()">
+  <h2>تالا</h2>
+  <p>اضغطي هنا 💌</p>
+</div>
+
+<!-- الرسالة -->
+<div id="message" class="message-box hidden">
+  <h2>رسالة لك يا تالا ✨</h2>
+  <p>
+    تالا 💖<br>
+    تذكري دائمًا إنك إنسانة مميزة وقوية،
+    وقادرة تحققين كل اللي تبينه 🌸<br><br>
+    لا تخلي أي شي يوقفك،
+    ابتسامتك لحالها تفرق 💕<br><br>
+    كوني دايم فخورة بنفسك ✨
+  </p>
+
+  <button onclick="goBack()">رجوع</button>
+</div>
+
+<script>
+  function showMessage() {
+    document.getElementById("firstCard").classList.add("hidden");
+    document.getElementById("message").classList.remove("hidden");
+  }
+
+  function goBack() {
+    document.getElementById("message").classList.add("hidden");
+    document.getElementById("firstCard").classList.remove("hidden");
+  }
+</script>
 
 </body>
 </html>
